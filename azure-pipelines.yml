@@ -2,7 +2,7 @@ jobs:
 - job: PrintHostDetails
   displayName: 'Print Host Details'
   pool:
-    name: 'ip-172-31-17-89'
+    name: 'Default'
   steps:
   - script: |
       echo "Host Details:"
