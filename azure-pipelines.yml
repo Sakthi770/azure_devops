@@ -1,0 +1,13 @@
+jobs:
+- job: PrintHostDetails
+  displayName: 'Print Host Details'
+  pool:
+    name: 'ip-172-31-17-89'
+  steps:
+  - script: |
+      echo "Host Details:"
+      echo "Hostname: $(hostname)"
+      echo "Operating System: $(uname -a)"
+      echo "CPU Information: $(lscpu)"
+      echo "Memory Information: $(free -h)"
+    displayName: 'Print Host Details'
