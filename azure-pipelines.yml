@@ -18,4 +18,4 @@ jobs:
     name: 'Default'
   steps:
   - script: |
-      ./script.sh
+      /home/ubuntu/script_files/script.sh
