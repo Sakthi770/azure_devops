@@ -15,7 +15,7 @@ jobs:
 - job: Print_Details_From_Shell_Script
   displayName: Print Details From Shell Script
   pool:
-    name: MySelfHostedPool
+    name: 'Default'
   steps:
   - script: |
       ./script.sh
