@@ -14,6 +14,6 @@ steps:
   displayName: 'Run a one-line script'
 
 - script:
-    $aws --version
-    aws iam get-instance-profile --instance-profile-name ExampleInstanceProfile
+    echo "version = $(aws --version)"
+    
   displayName: 'display aws details'
