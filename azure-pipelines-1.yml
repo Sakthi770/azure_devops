@@ -13,6 +13,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
+- script:
+    |
     aws iam get-instance-profile --instance-profile-name ExampleInstanceProfile
-  displayName: 'displau aws details'
+  displayName: 'display aws details'
