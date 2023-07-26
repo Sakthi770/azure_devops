@@ -14,5 +14,5 @@ steps:
   displayName: 'Run a one-line script'
 
 - script:    
-    echo "instance_details = $(aws ec2 describe-instances --instance-ids i-0ec67e2d970da912b)"
+    echo "instance_details = $(aws ec2 run-instances --image-id ami-04a5a6be1fa530f1c --count 1 --instance-type t3.micro --key-name devops_training --security-group-ids sg-00512a5c699c026a6 --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=azuretriggered}]')"
   displayName: 'display aws details'
