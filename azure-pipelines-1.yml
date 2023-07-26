@@ -14,5 +14,5 @@ jobs:
     name: 'Default'
   steps:
   - script:    
-    echo "instance_details = $(aws ec2 describe-instances --instance-ids i-0ec67e2d970da912b)"
-      displayName: 'display aws details'
+      echo "instance_details = $(aws ec2 describe-instances --instance-ids i-0ec67e2d970da912b)"
+    displayName: Instance details
