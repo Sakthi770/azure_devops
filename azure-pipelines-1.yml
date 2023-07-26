@@ -1,18 +1,18 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- main
-
-pool:
+jobs:
+- job: Create_Instance
+  displayName: 'Create Instance'
+  pool:
     name: 'Default'
+  steps:
+  - script:
+      echo "instance_creation = $(aws ec2 run-instances --image-id ami-04a5a6be1fa530f1c --count 1 --instance-type t3.micro --key-name devops_training --security-group-ids sg-00512a5c699c026a6 --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=azuretriggered}]')"
+    displayName: Created
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script:    
+- job: Print_Details_From_Shell_Script
+  displayName: Print Details From Shell Script
+  pool:
+    name: 'Default'
+  steps:
+  - script:    
     echo "instance_details = $(aws ec2 describe-instances --instance-ids i-0ec67e2d970da912b)"
-  displayName: 'display aws details'
+      displayName: 'display aws details'
